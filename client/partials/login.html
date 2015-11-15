@@ -1,0 +1,36 @@
+<div class="row">
+	<div class="col m12">
+		<h4>Hello!</h4>
+		<h5>Join and share your ideas.</h5>
+	</div>
+</div>
+<div class="row">
+	<div class="col m6">
+		<h5>Register</h5>
+		<form>
+			<div class="input-field">
+				<input type='text' placeholder="Name" ng-model='new_user.name' required>
+			</div>
+			<div class="input-field">
+				<input type='password' placeholder="Password" ng-model='new_user.password' required>
+			</div>
+			<div class="input-field right">
+				<input type='submit' value='Enter' ng-click='register()' class="btn">
+			</div>
+		</form>
+	</div>
+	<div class="col m6">
+		<h5>Login</h5>
+		<form>
+			<div class="input-field">
+				<input type='text' placeholder="Name" ng-model='user.name' required>
+			</div>
+			<div class="input-field">
+				<input type='password' placeholder="Password" ng-model='user.password' required>
+			</div>
+			<div class="input-field right">
+				<input type='submit' value='Login' ng-click='login()' class="btn">
+			</div>
+		</form>
+	</div>
+</div>
