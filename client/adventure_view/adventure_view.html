@@ -1,0 +1,9 @@
+<div class="float_right_abs btn btn-primary" id="show_nav"><span class="glyphicon glyphicon-menu-hamburger"></span></div>
+<div ng-controller="AdventureViewTabsCtrl" ng-show="dm">
+	<tabs data="tabs"></tabs>
+	<div ui-view="adv_body"></div>
+</div>
+<div ui-view="adv" ng-show="!dm">
+	<!-- <div id="left" class="col-md-6 border tall" ui-view="left"></div> -->
+	<!-- <div id="right" class="col-md-6 border tall" ui-view="right"></div> -->
+</div>

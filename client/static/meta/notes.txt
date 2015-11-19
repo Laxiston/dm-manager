@@ -1,0 +1,70 @@
+Views
+	Character creation
+	Monster creation
+	Item creation
+	Adventures Selection
+		Adventure Creation
+	Specific Adventure View
+		DM view
+			Separate player character views
+			Initiative button
+			Cooldowns
+			Rest buttons
+			Spellslots
+			In-Adventure Beastiary
+			Monster list
+		Player character sheet view
+			Cooldown
+Databases
+	Beastiary
+	Item Compendium
+	Character Showcase
+	Class/Race Showcase
+
+DM View
+	DM View
+		Left content
+			Adventure view
+		Right content
+			Treasury
+			Beastiary
+			Notes
+				Back button
+				Title
+				Notepad
+					Pages
+				Buttons
+					Gray out active button
+	Player Character views
+		All player characters sheets
+
+adventure removal
+	player wants to leave adventure
+		if player is DM:
+			DM removal process
+		otherwise: remove player from adventure
+DM removal
+	player wishes to not be DM anymore
+		if player wants to remove adventure:
+			prompt to remove
+			remove all players from adventure
+			remove adventure from server
+		if player wants to transfer DM to another player:
+			select other player to be DM. if no more players, remove adventure
+player removal
+	player wishes to leave adventure
+		remove adventure
+	player is being kicked from adventure
+		DM can remove player from adventure
+
+adventure creation
+	first person to create is automatically set as DM
+
+/*Questions*/
+can player be DM and have a character?
+can player have multiple characters?
+
+Extra functionality:
+	common user beastiary view
+	common user treasury view
+	drag and drop data from dm view into notes

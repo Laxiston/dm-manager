@@ -33,6 +33,6 @@ require('./server/config/mongoose.js');
 // Route handler.
 require('./server/config/routes.js')(app);
 
-app.listen(8000, function(){
-  console.log('listening on *:8000');
+app.listen(3333, function(){
+  console.log('listening on *:3333');
 });

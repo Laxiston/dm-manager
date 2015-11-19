@@ -1,30 +1,42 @@
-<html ng-app='forum'>
+<html ng-app='dmtool'>
 <head>
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/css/materialize.min.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/js/materialize.min.js"></script> -->
+    <title>Not DND. Honest.</title>
+    <link href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css' rel='stylesheet'>
+    <link rel="stylesheet" type="text/css" href="static/style/style.css">
 </head>
 <body>
-	<div class="container">
-		<div ng-view></div>
+  <div ui-view="header"></div>
+	<div class="container-fluid">
+		<div ui-view="content"></div>
 	</div>
 
   <!-- External scripts -->
 	<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-  <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular.min.js'/></script>
+  <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular.js'/></script>
+  <script src='bower_components/angular-ui-router/release/angular-ui-router.js'/></script>
+  <script src='bower_components/angular-ui-router.stateHelper/statehelper.js'/></script>
+  <script src='bower_components/angular-ui-router-tabs/src/ui-router-tabs.js'/></script>
+  <script src='bower_components/a0-angular-storage/dist/angular-storage.js'/></script>
+  <script src='bower_components/angular-jwt/dist/angular-jwt.js'/></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.5/angular-route.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/js/materialize.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
+  <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js'></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.14.3/ui-bootstrap-tpls.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular-animate.js"></script>
 
   <!-- Internal Scripts -->
-  <script src="scripts/app.js"></script>
-  <script src="scripts/controllers/login.js"></script>
-  <script src="scripts/controllers/dashboard.js"></script>
-  <script src="scripts/controllers/topic.js"></script>
-  <script src="scripts/controllers/user.js"></script>
-  <script src="scripts/factories/category.js"></script>
-  <script src="scripts/factories/comment.js"></script>
-  <script src="scripts/factories/post.js"></script>
-  <script src="scripts/factories/topic.js"></script>
-  <script src="scripts/factories/user.js"></script>
+  <script src="app.js"></script>
+  <script src="login_and_reg/controllers/login.js"></script>
+  <script src="login_and_reg/controllers/register.js"></script>
+  <script src="navbar/controllers/navbar.js"></script>
+  <script src="adventure_select/controllers/new_adventure_modal.js"></script>
+  <script src="adventure_select/controllers/invite_player_modal.js"></script>
+  <script src="adventure_select/controllers/remove_adventure_modal.js"></script>
+  <script src="adventure_select/controllers/dm_remove_adventure_modal.js"></script>
+  <script src="new_adventure/controllers/roll_new_accordion.js"></script>
+  <script src="adventure_view/controllers/adventure_view.js"></script>
+  <script src="adventure_view/controllers/adventure_view_tabs.js"></script>
 </body>
 </html>

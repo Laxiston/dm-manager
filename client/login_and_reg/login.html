@@ -1,0 +1,18 @@
+<div class="row">
+	<div class="col-md-4 col-md-offset-4 col-xs-6 col-xs-offset-3">
+		<h1 class='text-center'>DM Tool Login</h1>
+		<form>
+			<div class="form-group">
+				<input type='text' class='form-control' ng-model='user.username' placeholder='Username, Email...whatever' required>
+			</div>
+			<div class="form-group">
+				<input type="password" class="form-control" ng-model="user.password" placeholder="Password" required>
+			</div>
+			<button class='btn btn-primary float_right' ng-click="login()">Let's play!</button>
+			<input type='checkbox' id="remember"> <label for="remember">Remember me!</label>
+		</form>
+			<a ui-sref="root.register" class="display_block">I need an account</a>
+			<a ui-sref="root.forgot_info">What's my login?</a>
+			<a href="" class='text-center'><h4>What is this place?</h4></a>
+	</div>
+</div>

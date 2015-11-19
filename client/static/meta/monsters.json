@@ -1,0 +1,169 @@
+{
+  "meta":
+  {
+    "name":"value",
+    "size":"value",
+    "type":"value",
+    "tags":["value", "value"],
+    "alignment":"value",
+    "armorClass":"value",
+    "hitPoints":"value",
+    "speed":
+
+    {
+          "distance":"value",
+          "type":"value"
+    },
+
+    "challengeRating":"value",
+    "expPoints":"value"
+  },
+  "stats":
+  {
+
+        "strength":
+
+        {
+              "value":"value",
+              "modifier":"value",
+              "savingThrow":"value"
+        },
+
+        "dexterity":
+
+        {
+              "value":"value",
+              "modifier":"value",
+              "savingThrow":"value"
+        },
+
+        "constitution":
+
+        {
+              "value":"value",
+              "modifier":"value",
+              "savingThrow":"value"
+        },
+
+        "intelligence":
+
+        {
+              "value":"value",
+              "modifier":"value",
+              "savingThrow":"value"
+        },
+
+        "wisdom":
+
+        {
+              "value":"value",
+              "modifier":"value",
+              "savingThrow":"value"
+        },
+
+        "charisma":
+
+        {
+              "value":"value",
+              "modifier":"value",
+              "savingThrow":"value"
+        }
+  },
+  "elementalTraits":
+  {
+        "vulnerabilities":["value", "value"],
+        "resistances":["value", "value"],
+        "immunities":["value", "value"]
+  },
+  "parlance":
+  {
+        "senses":["value", "value"],
+        "languagesSpoken":["value", "value"],
+        "languagesUnderstood":["value", "value"],
+        "telepathy":true
+  },
+  "operations":
+  {
+        "actions":[
+
+              {
+                    "name":"value",
+                    "desc":"value"
+              },
+
+              {
+                    "name":"value",
+                    "desc":"value"
+              }
+        ],
+
+        "multiattack":"value",
+        "limitedUsage":[
+
+              {
+                    "name":"value",
+                    "desc":"value"
+              },
+
+              {
+                    "name":"value",
+                    "desc":"value"
+              }
+        ],
+
+        "reactions":["value", "value"],
+        "skills":[
+
+              {
+                    "name":"value",
+                    "desc":"value"
+              },
+
+              {
+                    "name":"value",
+                    "desc":"value"
+              }
+        ]
+  },
+  "misc":
+  {
+        "specialTraits":["value", "value"],
+        "equipment":["value", "value"],
+        "ammunition":["value", "value"]
+  },
+  "legendary":
+  {
+        "actions":[
+
+              {
+                    "name":"value",
+                    "desc":"value"
+              },
+
+              {
+                    "name":"value",
+                    "desc":"value"
+              }
+        ],
+
+        "lairActions":[
+
+              {
+                    "name":"value",
+                    "desc":"value"
+              },
+
+              {
+                    "name":"value",
+                    "desc":"value"
+              }
+        ],
+
+        "regionalEffects":
+
+        {
+              "name":"value",
+              "desc":"value"
+        }
+  }
+}
