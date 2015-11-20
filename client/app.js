@@ -34,7 +34,7 @@ angular.module('dmtool', [
 						}
 					}
 				})
-				.state("register", {
+				.state("root.register", {
 			  	url: "/register",
 			  	views: {
 						"content@" : {
@@ -43,7 +43,7 @@ angular.module('dmtool', [
 						}
 					}
 			  })
-			  .state("forgot_info", {
+			  .state("root.forgot_info", {
 			  	url: "/forgot_info",
 			  	views: {
 						"content@" : {
@@ -51,22 +51,63 @@ angular.module('dmtool', [
 						}
 					}
 			  })
+			  .state("root.home", {
+			  	url: "/home",
+			  	data: {
+			  		requiresLogin: true
+			  	},
+			  	views: {
+						"header@" : {
+							templateUrl: 'navbar/navbar_internal.html',
+							controller: 'NavbarCtrl'
+						},
+						"content@" : {
+					    templateUrl: 'adventure_select/adventure_select.html'
+						}
+					}
+			  })
+			  .state("root.home.adventure_view", {
+			  	url: "/adventure_view",
+			  	views: {
+						"content@" : {
+					    templateUrl: 'adventure_view/adventure_view.html',
+					    controller: 'AdventureViewCtrl'
+						}
+					},
+					params: {
+			      autoActivateChild: 'root.home.adventure_view.player'
+			    }
+			  })
+			  .state("root.home.adventure_view.player", {
+			  	url: "/player",
+			  	views: {
+			  		"content@" : {
+					    templateUrl: 'adventure_view/pages/adventure.html',
+					    controller: function ($state, $scope, $window) {
+								// console.log("hi");
+							}
+			  		}
+			  	}
+			  })
+			  .state("root.home.create_char", {
+			  	url: "/create_char",
+			  	views: {
+			  		"content@" : {
+			  			templateUrl: 'new_adventure/character_create.html'
+			  		}	
+			  	}
+			  })
+			  .state("root.home.roll_new_char", {
+			  	url: "/roll_new_char",
+			  	views: {
+			  		"content@" : {
+			  			templateUrl: 'new_adventure/roll_new_char.html'
+			  		}	
+			  	}
+			  })
+
 				// children: [
-				//   {
-				//   	name: "home",
-				//   	url: "/home",
-				//   	data: {
-				//   		requiresLogin: true
-				//   	},
-				//   	views: {
-				// 			"header@" : {
-				// 				templateUrl: 'navbar/navbar_internal.html',
-				// 				controller: 'NavbarCtrl'
-				// 			},
-				// 			"content@" : {
-				// 		    templateUrl: 'adventure_select/adventure_select.html'
-				// 			}
-				// 		},
+				//   
 				//   	children: [
 				// 		  {
 				//   			name: "adventure_view",
@@ -74,7 +115,7 @@ angular.module('dmtool', [
 				// 		  	views: {
 				// 		  		"content@" : {
 				// 				    templateUrl: 'adventure_view/adventure_view.html',
-				// 				    controller: 'AdventureViewCtrl'
+				// 				    
 				// 		  		}
 				// 		  	},
 				// 		  	children: [
@@ -101,99 +142,7 @@ angular.module('dmtool', [
 				// 				  	}
 				// 				  }
 				// 		  	]
-				// 		  },
-				// 		  {
-				//   			name: "create_char",
-				// 		  	url: "/create_char",
-				// 		  	views: {
-				// 		  		"content@" : {
-				// 		  			templateUrl: 'new_adventure/character_create.html'
-				// 		  		}	
-				// 		  	}
-				// 		  },
-				// 		  {
-				//   			name: "roll_new_char",
-				// 		  	url: "/roll_new_char",
-				// 		  	views: {
-				// 		  		"content@" : {
-				// 				    templateUrl: 'new_adventure/roll_new_char.html'
-				// 		  		}	
-				// 		  	}
 				// 		  }
-				//   	]
-				//   }
-				// ]
-			 //  //internal - should redirect to root if not logged in
-			 //  .state({
-			 //  	name: "home",
-			 //  	url: "/home",
-			 //  	data: {
-			 //  		requiresLogin: true
-			 //  	},
-			 //  	views: {
-				// 		"header@" : {
-				// 			templateUrl: 'navbar/navbar_internal.html',
-				// 			controller: 'NavbarCtrl'
-				// 		},
-				// 		"content@" : {
-				// 	    templateUrl: 'adventure_select/adventure_select.html'
-				// 		}
-				// 	},
-			 //  	children: [
-				// 	  {
-			 //  			name: "adventure_view",
-				// 	  	url: "/adventure_view",
-				// 	  	views: {
-				// 	  		"content@" : {
-				// 			    templateUrl: 'adventure_view/adventure_view.html',
-				// 			    controller: 'AdventureViewCtrl'
-				// 	  		}
-				// 	  	},
-				// 	  	children: [
-				// 	    // 	{
-				// 		  	// 	name: "dm",
-				// 			  // 	url: "/dm",
-				// 			  // 	views: {
-				// 			  // 		"adv_body@" : {
-				// 					//     templateUrl: 'adventure_view/pages/adventure.html',
-				// 					//     controller: 'AdventureViewTabsCtrl'
-				// 			  // 		}
-				// 			  // 	}
-				// 			  // },
-				// 			  {
-				// 			  	name: "player",
-				// 			  	url: "/player",
-				// 			  	views: {
-				// 			  		"adv@root.adventure_view" : {
-				// 					    templateUrl: 'adventure_view/pages/adventure.html',
-				// 					    controller: function ($state, $scope, $window) {
-				// 								console.log("hi");
-				// 							}
-				// 			  		}
-				// 			  	}
-				// 			  }
-				// 	  	]
-				// 	  },
-				// 	  {
-			 //  			name: "create_char",
-				// 	  	url: "/create_char",
-				// 	  	views: {
-				// 	  		"content@" : {
-				// 	  			templateUrl: 'new_adventure/character_create.html'
-				// 	  		}	
-				// 	  	}
-				// 	  },
-				// 	  {
-			 //  			name: "roll_new_char",
-				// 	  	url: "/roll_new_char",
-				// 	  	views: {
-				// 	  		"content@" : {
-				// 			    templateUrl: 'new_adventure/roll_new_char.html'
-				// 	  		}	
-				// 	  	}
-				// 	  }
-			 //  	]
-			 //  })
 
 			  ;
 		}
@@ -208,16 +157,32 @@ angular.module('dmtool', [
 	    $rootScope.$stateParams = $stateParams;
 
 		  $rootScope.$on('$stateChangeStart', function(e, to) {
+		  	
+		  	console.log("state change to  " + to.data.requiresLogin);
+
 		    if (to.data && to.data.requiresLogin) {
 		      if (!store.get('jwt') || jwtHelper.isTokenExpired(store.get('jwt'))) {
+
+			    	console.log("one");
+
 		        e.preventDefault();
 		        $state.go('root');
+		      }
+		      var x;
+		      if (x = to && to.params && to.params.autoActivateChild) {
+
+			    	console.log("three");
+
+		        $state.go(x);
 		      }
 		    }
 		    if (to.data && !to.data.requiresLogin) {
 		    	if (store.get('jwt') && !jwtHelper.isTokenExpired(store.get('jwt'))) {
+			    	
+			    	console.log("two");
+
 		        e.preventDefault();
-		        $state.go('home');
+		        $state.go('root.home');
 		      }
 		    }
 		  });
