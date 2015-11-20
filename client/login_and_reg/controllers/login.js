@@ -11,7 +11,7 @@ angular.module('dmtool')
         .then(
           function(response) {
             store.set('jwt', response.data.id_token);
-            $state.go('root.home');
+            $state.go('home');
           },
           function(error) {
             alert(error.data);

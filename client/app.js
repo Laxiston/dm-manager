@@ -51,7 +51,7 @@ angular.module('dmtool', [
 						}
 					}
 			  })
-			  .state("root.home", {
+			  .state("home", {
 			  	url: "/home",
 			  	data: {
 			  		requiresLogin: true
@@ -66,7 +66,7 @@ angular.module('dmtool', [
 						}
 					}
 			  })
-			  .state("root.home.adventure_view", {
+			  .state("home.adventure_view", {
 			  	url: "/adventure_view",
 			  	views: {
 						"content@" : {
@@ -75,21 +75,22 @@ angular.module('dmtool', [
 						}
 					},
 					params: {
-			      autoActivateChild: 'root.home.adventure_view.player'
+			      autoActivateChild: 'home.adventure_view.player'
+			    },
+			    data: {
+			    	hide_navbar: true
 			    }
 			  })
-			  .state("root.home.adventure_view.player", {
+			  .state("home.adventure_view.player", {
 			  	url: "/player",
 			  	views: {
-			  		"content@" : {
+			  		"left@home.adventure_view" : {
 					    templateUrl: 'adventure_view/pages/adventure.html',
-					    controller: function ($state, $scope, $window) {
-								// console.log("hi");
-							}
+					    controller: 'AdventureViewCtrl'
 			  		}
 			  	}
 			  })
-			  .state("root.home.create_char", {
+			  .state("home.create_char", {
 			  	url: "/create_char",
 			  	views: {
 			  		"content@" : {
@@ -97,7 +98,7 @@ angular.module('dmtool', [
 			  		}	
 			  	}
 			  })
-			  .state("root.home.roll_new_char", {
+			  .state("home.roll_new_char", {
 			  	url: "/roll_new_char",
 			  	views: {
 			  		"content@" : {
@@ -182,7 +183,7 @@ angular.module('dmtool', [
 			    	console.log("two");
 
 		        e.preventDefault();
-		        $state.go('root.home');
+		        $state.go('home');
 		      }
 		    }
 		  });

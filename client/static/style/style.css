@@ -121,10 +121,7 @@ h1{
 	color: #f29649;
 }
 .border{
-	border:1px solid black;
-}
-.tall{
-	height: 600px;
+	border-right:1px solid black;
 }
 .float_right_abs{
 	position: absolute;
