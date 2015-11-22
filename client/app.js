@@ -87,9 +87,22 @@ angular.module('dmtool', [
 			  		"left@home.adventure_view" : {
 					    templateUrl: 'adventure_view/pages/adventure.html',
 					    controller: 'AdventureViewCtrl'
+			  		},
+			  		"right@home.adventure_view" : {
+					    templateUrl: 'adventure_view/pages/bestiary.html',
+					    controller: 'AdventureViewCtrl'
 			  		}
 			  	}
 			  })
+			  .state("home.adventure_view.player.test", {
+			  	views: {
+			  		"left@home.adventure_view" : {
+					    templateUrl: 'adventure_view/pages/bestiary.html',
+					    controller: 'AdventureViewCtrl'
+			  		}
+			  	}
+			  })
+
 			  .state("home.create_char", {
 			  	url: "/create_char",
 			  	views: {
@@ -107,44 +120,6 @@ angular.module('dmtool', [
 			  	}
 			  })
 
-				// children: [
-				//   
-				//   	children: [
-				// 		  {
-				//   			name: "adventure_view",
-				// 		  	url: "/adventure_view",
-				// 		  	views: {
-				// 		  		"content@" : {
-				// 				    templateUrl: 'adventure_view/adventure_view.html',
-				// 				    
-				// 		  		}
-				// 		  	},
-				// 		  	children: [
-				// 		    // 	{
-				// 			  	// 	name: "dm",
-				// 				  // 	url: "/dm",
-				// 				  // 	views: {
-				// 				  // 		"adv_body@" : {
-				// 						//     templateUrl: 'adventure_view/pages/adventure.html',
-				// 						//     controller: 'AdventureViewTabsCtrl'
-				// 				  // 		}
-				// 				  // 	}
-				// 				  // },
-				// 				  {
-				// 				  	name: "player",
-				// 				  	url: "/player",
-				// 				  	views: {
-				// 				  		"content@" : {
-				// 						    templateUrl: 'adventure_view/pages/adventure.html',
-				// 						    controller: function ($state, $scope, $window) {
-				// 									console.log("hi");
-				// 								}
-				// 				  		}
-				// 				  	}
-				// 				  }
-				// 		  	]
-				// 		  }
-
 			  ;
 		}
 	]
@@ -158,9 +133,6 @@ angular.module('dmtool', [
 	    $rootScope.$stateParams = $stateParams;
 
 		  $rootScope.$on('$stateChangeStart', function(e, to) {
-		  	
-		  	console.log("state change to  " + to.data.requiresLogin);
-
 		    if (to.data && to.data.requiresLogin) {
 		      if (!store.get('jwt') || jwtHelper.isTokenExpired(store.get('jwt'))) {
 
@@ -169,12 +141,13 @@ angular.module('dmtool', [
 		        e.preventDefault();
 		        $state.go('root');
 		      }
-		      var x;
-		      if (x = to && to.params && to.params.autoActivateChild) {
+
+		      if (to.params && to.params.autoActivateChild) {
 
 			    	console.log("three");
 
-		        $state.go(x);
+		        e.preventDefault();
+		        $state.go(to.params.autoActivateChild);
 		      }
 		    }
 		    if (to.data && !to.data.requiresLogin) {
