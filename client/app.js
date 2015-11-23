@@ -76,8 +76,8 @@ angular.module('dmtool', [
 						}
 					},
 					children: [
+						//home.adventure_view
 						{
-							//home.adventure_view
 					  	name: "adventure_view",
 					  	url: "/adventure_view",
 					  	views: {
@@ -93,8 +93,8 @@ angular.module('dmtool', [
 					    	hide_navbar: true
 					    },
 					    children: [
+								//home.adventure_view.player
 					    	{
-									//home.adventure_view.player
 							  	name: "player",
 							  	url: "/player",
 							  	views: {
@@ -108,8 +108,8 @@ angular.module('dmtool', [
 							  		}
 							  	},
 							  	children: [
+										//home.adventure_view.player.test
 							  		{
-											//home.adventure_view.player.test
 									  	name: "test",
 									  	views: {
 									  		"left@home.adventure_view" : {
@@ -122,8 +122,8 @@ angular.module('dmtool', [
 							  }
 					    ]
 					  },
+				  	//home.create_char
 					  {
-					  	//home.create_char
 					  	name: "create_char",
 					  	url: "/create_char",
 					  	views: {
@@ -132,8 +132,8 @@ angular.module('dmtool', [
 					  		}	
 					  	}
 					  },
+				  	//home.roll_new_char
 					  {
-					  	//home.roll_new_char
 					  	name: "roll_new_char",
 					  	url: "/roll_new_char",
 					  	views: {
