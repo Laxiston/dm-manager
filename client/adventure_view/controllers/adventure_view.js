@@ -5,10 +5,10 @@ angular.module('dmtool')
 		[
 							 "$state", "$scope",
 			function ($state,		$scope) {
-				$scope.dm = false;
+				$scope.dm = true;
 
 				$scope.pageChange = function() {
-					if ($scope.left_page.select == "bestiary") {
+					if ($scope.page.select == "bestiary") {
 						$state.go("home.adventure_view.player.test");
 					};
 				}

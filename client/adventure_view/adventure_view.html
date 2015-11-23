@@ -1,8 +1,9 @@
-<div ng-controller="AdventureViewTabsCtrl" ng-show="dm">
-	<tabs data="tabs"></tabs>
-	<div ui-view="adv_view_dm"></div>
-</div>
-<div ui-view="adv_view_player" ng-show="!dm">
-	<div id="left" class="col-md-6 border" ui-view="left"></div>
-	<div id="right" class="col-md-6" ui-view="right"></div>
+<div ng-controller="AdventureViewTabsCtrl">
+	<tabs data="tabs" ng-show="dm"></tabs>
+	<div ui-view="adv_view_player" ng-show="!dm">
+		<div class="row">
+			<div id="left" class="col-md-6 border" ui-view="left"></div>
+			<div id="right" class="col-md-6" ui-view="right"></div>
+		</div>
+	</div>
 </div>

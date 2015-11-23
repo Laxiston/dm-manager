@@ -16,9 +16,11 @@ angular.module('dmtool', [
 		function ( $stateProvider,   $urlRouterProvider,   jwtInterceptorProvider, 	 $httpProvider, 	stateHelperProvider) {
 			$urlRouterProvider.otherwise("/");
 
-			$stateProvider
+			stateHelperProvider
 				//external - should redirect to adventure select if logged in
-				.state("root", {
+				.state({
+					//root
+					name: "root",
 					url: "/",
 					data: {
 						requiresLogin: false
@@ -32,26 +34,34 @@ angular.module('dmtool', [
 							templateUrl: 'login_and_reg/login.html',
 							controller: 'LoginCtrl'
 						}
-					}
+					},
+					children: [
+						{
+							//root.register
+							name: "register",
+					  	url: "/register",
+					  	views: {
+								"content@" : {
+							    templateUrl: 'login_and_reg/register.html',
+									controller: 'RegisterCtrl'
+								}
+							}
+					  },
+					  {
+					  	//root.forgot_info
+					  	name: "forgot_info",
+					  	url: "/forgot_info",
+					  	views: {
+								"content@" : {
+							    templateUrl: 'login_and_reg/forgot_info.html'
+								}
+							}
+					  }
+					]
 				})
-				.state("root.register", {
-			  	url: "/register",
-			  	views: {
-						"content@" : {
-					    templateUrl: 'login_and_reg/register.html',
-							controller: 'RegisterCtrl'
-						}
-					}
-			  })
-			  .state("root.forgot_info", {
-			  	url: "/forgot_info",
-			  	views: {
-						"content@" : {
-					    templateUrl: 'login_and_reg/forgot_info.html'
-						}
-					}
-			  })
-			  .state("home", {
+			  .state({
+			  	//home
+			  	name: "home",
 			  	url: "/home",
 			  	data: {
 			  		requiresLogin: true
@@ -64,62 +74,76 @@ angular.module('dmtool', [
 						"content@" : {
 					    templateUrl: 'adventure_select/adventure_select.html'
 						}
-					}
-			  })
-			  .state("home.adventure_view", {
-			  	url: "/adventure_view",
-			  	views: {
-						"content@" : {
-					    templateUrl: 'adventure_view/adventure_view.html',
-					    controller: 'AdventureViewCtrl'
-						}
 					},
-					params: {
-			      autoActivateChild: 'home.adventure_view.player'
-			    },
-			    data: {
-			    	hide_navbar: true
-			    }
+					children: [
+						{
+							//home.adventure_view
+					  	name: "adventure_view",
+					  	url: "/adventure_view",
+					  	views: {
+								"content@" : {
+							    templateUrl: 'adventure_view/adventure_view.html',
+							    controller: 'AdventureViewCtrl'
+								}
+							},
+							params: {
+					      autoActivateChild: 'home.adventure_view.player'
+					    },
+					    data: {
+					    	hide_navbar: true
+					    },
+					    children: [
+					    	{
+									//home.adventure_view.player
+							  	name: "player",
+							  	url: "/player",
+							  	views: {
+							  		"left@home.adventure_view" : {
+									    templateUrl: 'adventure_view/pages/adventure.html',
+									    controller: 'AdventureViewCtrl'
+							  		},
+							  		"right@home.adventure_view" : {
+									    templateUrl: 'adventure_view/pages/bestiary.html',
+									    controller: 'AdventureViewCtrl'
+							  		}
+							  	},
+							  	children: [
+							  		{
+											//home.adventure_view.player.test
+									  	name: "test",
+									  	views: {
+									  		"left@home.adventure_view" : {
+											    templateUrl: 'adventure_view/pages/bestiary.html',
+											    controller: 'AdventureViewCtrl'
+									  		}
+									  	}
+									  }
+							  	]
+							  }
+					    ]
+					  },
+					  {
+					  	//home.create_char
+					  	name: "create_char",
+					  	url: "/create_char",
+					  	views: {
+					  		"content@" : {
+					  			templateUrl: 'new_adventure/character_create.html'
+					  		}	
+					  	}
+					  },
+					  {
+					  	//home.roll_new_char
+					  	name: "roll_new_char",
+					  	url: "/roll_new_char",
+					  	views: {
+					  		"content@" : {
+					  			templateUrl: 'new_adventure/roll_new_char.html'
+					  		}	
+					  	}
+					  }
+					]
 			  })
-			  .state("home.adventure_view.player", {
-			  	url: "/player",
-			  	views: {
-			  		"left@home.adventure_view" : {
-					    templateUrl: 'adventure_view/pages/adventure.html',
-					    controller: 'AdventureViewCtrl'
-			  		},
-			  		"right@home.adventure_view" : {
-					    templateUrl: 'adventure_view/pages/bestiary.html',
-					    controller: 'AdventureViewCtrl'
-			  		}
-			  	}
-			  })
-			  .state("home.adventure_view.player.test", {
-			  	views: {
-			  		"left@home.adventure_view" : {
-					    templateUrl: 'adventure_view/pages/bestiary.html',
-					    controller: 'AdventureViewCtrl'
-			  		}
-			  	}
-			  })
-
-			  .state("home.create_char", {
-			  	url: "/create_char",
-			  	views: {
-			  		"content@" : {
-			  			templateUrl: 'new_adventure/character_create.html'
-			  		}	
-			  	}
-			  })
-			  .state("home.roll_new_char", {
-			  	url: "/roll_new_char",
-			  	views: {
-			  		"content@" : {
-			  			templateUrl: 'new_adventure/roll_new_char.html'
-			  		}	
-			  	}
-			  })
-
 			  ;
 		}
 	]

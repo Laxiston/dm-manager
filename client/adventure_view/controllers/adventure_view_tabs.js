@@ -6,7 +6,7 @@ angular.module('dmtool').controller('AdventureViewTabsCtrl', function ($state, $
 	  $scope.tabs = [
 	    {
 	    	heading:'DM',
-	    	route:'home.adventure_view.dm',
+	    	route:'home.adventure_view.player.test',
 	    	active: true,
 	    	params: {},
 	    	options: {}
