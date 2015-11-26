@@ -1,9 +1,9 @@
-<div ng-controller="AdventureViewTabsCtrl">
-	<tabs data="tabs" ng-show="dm"></tabs>
-	<div ui-view="adv_view_player" ng-show="!dm">
-		<div class="row">
-			<div id="left" class="col-md-6 border" ui-view="left"></div>
-			<div id="right" class="col-md-6" ui-view="right"></div>
+<uib-tabset>
+  <uib-tab ng-repeat="tab in tabs" heading="{{tab.heading}}" active="tab.active" disable="tab.disabled" select="selectTab(tab)" ng-show="dm">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12" ui-view="page"></div>
+			</div>
 		</div>
-	</div>
-</div>
+  </uib-tab>
+</uib-tabset>

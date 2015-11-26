@@ -1,8 +1,8 @@
 <br>
 <div class="row">
 	<div class="col-md-4 col-xs-4 col-md-offset-4 col-xs-offset-4">
-		<select class="form-control page_select">
-			<option value="treasury">Treasury</option>
+		<select class="form-control page_select" ng-model="page_select" ng-change="pageChange()">
+			<option value="treasury" disabled ng-selected="true">Treasury</option>
 			<option value="adventure">Adventure</option>
 			<option value="bestiary">Bestiary</option>
 			<option value="notes">Notes</option>

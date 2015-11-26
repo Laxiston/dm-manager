@@ -1,8 +1,8 @@
 <br>
 <div class="row">
 	<div class="col-md-4 col-xs-4 col-md-offset-4 col-xs-offset-4">
-		<select class="form-control page_select" ng-model="page.select">
-			<option value="bestiary" ng-selected="true">Bestiary</option>
+		<select class="form-control" ng-model="page_select" ng-change="pageChange()">
+			<option value="bestiary" disabled ng-selected="true">Bestiary</option>
 			<option value="adventure">Adventure</option>
 			<option value="notes">Notes</option>
 			<option value="treasury">Treasury</option>
@@ -11,7 +11,7 @@
 </div>
 <br>
 <div class="row">
-	<div class="col-md-6 col-xs-6">
+	<div class="col-md-3 col-xs-3">
 		<select class="form-control">
 			<option disabled selected>Type</option>
 			<option>Aberration</option>
@@ -31,26 +31,26 @@
 			<option>Custom</option>
 		</select>
 	</div>
-	<div class="col-md-6 col-xs-6">
-		<input type="text" placeholder="Search..." class="form-control">
+	<div class="col-md-3 col-xs-3 text-right">
+		<h4>Challenge Rating:</h4>
 	</div>
-</div>
-<br>
-<div class="row">
-	<div class="col-md-4 col-xs-4">
-		<h4>Challenge Rating: </h4>
-	</div>
-	<div class="col-md-3 col-xs-3 pull-right">
+	<div class="col-md-3 col-xs-3">
 		<input type="number" placeholder="Min" class="form-control">
 	</div>
-	<div class="col-md-3 col-xs-3 pull-right">
+	<div class="col-md-3 col-xs-3">
 		<input type="number" placeholder="Max" class="form-control">
 	</div>
 </div>
 <br>
 <div class="row">
+</div>
+<br>
+<div class="row">
+	<div class="col-md-4 col-xs-4">
+		<input type="text" placeholder="Search..." class="form-control" ngModel="bestiaryFilter">
+	</div>
 	<div class="col-md-2 pull-right">
-		<button class="btn btn-danger form-control">Reset</button>
+		<button class="btn btn-danger form-control" ng-click="resetOptions()">Reset Options</button>
 	</div>
 </div>
 <div class="row">
@@ -69,14 +69,14 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr>
-						<td class="text-center"><a href="">Monster</a></td>
-						<td class="text-center">Example</td>
-						<td class="text-center">Example</td>
-						<td class="text-center">Example</td>
-						<td class="text-center">Example</td>
-						<td class="text-center">Example</td>
-						<td class="text-center">Example</td>
+					<tr ng-repeat="monster in monsters | filter: bestiaryFilter | limitTo: 25 track by $index">
+						<td class="text-center"><a href="">{{monster.name}}</a></td>
+						<td class="text-center">{{monster.type}}</td>
+						<td class="text-center">{{monster.size}}</td>
+						<td class="text-center">{{monster.AC}}</td>
+						<td class="text-center">{{monster.HP}}</td>
+						<td class="text-center">{{monster.rating}}</td>
+						<td class="text-center">{{monster.EXP}}</td>
 					</tr>
 				</tbody>
 			</table>

@@ -4,10 +4,10 @@
 		<button class="btn btn-primary">Back</button>
 	</div>
 	<div class="col-md-4 col-xs-4 col-md-offset-2 col-xs-offset-2">
-		<select class="form-control page_select">
-			<option disabled selected>Spell Info</option>
-			<option value="stats">Character Stats</option>
-			<option value="cooldown">Cooldown Counter</option>
+		<select class="form-control" ng-model="page_select" ng-change="pageChange()">
+			<option disabled ng-selected="true">Spell Info</option>
+			<option value="character_stats">Character Stats</option>
+			<option value="cooldown_counter">Cooldown Counter</option>
 			<option value="notes">Notes</option>
 			<option value="roleplay">Roleplay</option>
 		</select>

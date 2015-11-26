@@ -1,22 +1,11 @@
 <br>
 <div class="row">
 	<div class="col-md-4 col-xs-4 col-md-offset-4 col-xs-offset-4">
-		<select class="form-control page_select">
-				<option value="notes">Notes</option>
-			<?php
-				if ($this->session->userdata("user_type") == "dm") {?>
-					<option value="adventure">Adventure</option>
-					<option value="bestiary">Bestiary</option>
-					<option value="treasury">Treasury</option>
-			<?php
-				}
-				else { ?>
-					<option value="stats">Character Stats</option>
-					<option value="cooldown">Cooldown Counter</option>
-					<option value="roleplay">Roleplay</option>
-			<?php
-				}
-			?>
+		<select class="form-control" ng-model="page_select" ng-change="pageChange()">
+				<option value="notes" disabled ng-selected="true">Notes</option>
+				<option value="character_stats">Character Stats</option>
+				<option value="cooldown_counter">Cooldown Counter</option>
+				<option value="roleplay">Roleplay</option>
 		</select>
 	</div>
 </div>

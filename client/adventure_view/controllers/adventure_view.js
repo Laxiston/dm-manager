@@ -6,11 +6,23 @@ angular.module('dmtool')
 							 "$state", "$scope",
 			function ($state,		$scope) {
 				$scope.dm = true;
+				$scope.tabs = [
+			    {
+			    	heading:'DM',
+			    	active: true
+			    },
+			    {
+			    	heading:'P1'
+			    }
+			  ];
 
-				$scope.pageChange = function() {
-					if ($scope.page.select == "bestiary") {
-						$state.go("home.adventure_view.player.test");
-					};
+				$scope.selectTab = function(tab) {
+					if(tab.heading === "DM") {
+						$state.go("home.adventure_view.dm.adventure");
+					}
+					else {
+						$state.go("home.adventure_view.player.character_stats");
+					}
 				}
 			}
 		]
