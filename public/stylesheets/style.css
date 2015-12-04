@@ -23,12 +23,7 @@ nav.vertical ul li{	display:block;}/* vertical menu */
 nav.horizontal ul li{	display: inline-block;}/* horizontal menu */
 img{max-width:100%;}
 /*end reset*/
-body{
-	font-family: "Arial Narrow" ,Arial,Helvetica,sans-serif;
-	background: url('../images/bg.png');
-	font-size:1.0em;
-	color:#555;
-}
+
 .wrap{
 	width:80%;
 	margin: 0 auto;
