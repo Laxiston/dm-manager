@@ -1,9 +1,6 @@
-<uib-tabset>
-  <uib-tab ng-repeat="tab in tabs" heading="{{tab.heading}}" active="tab.active" disable="tab.disabled" select="selectTab(tab)" ng-show="dm">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-12" ui-view="page"></div>
-			</div>
-		</div>
-  </uib-tab>
-</uib-tabset>
+<tabs data="tabs" type="tabs" ng-show="dm"/>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-12" ui-view="page"></div>
+	</div>
+</div>

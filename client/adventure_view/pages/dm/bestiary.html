@@ -41,18 +41,15 @@
 		<input type="number" placeholder="Max" class="form-control">
 	</div>
 </div>
-<br>
 <div class="row">
-</div>
-<br>
-<div class="row">
-	<div class="col-md-4 col-xs-4">
-		<input type="text" placeholder="Search..." class="form-control" ngModel="bestiaryFilter">
-	</div>
-	<div class="col-md-2 pull-right">
+	<div class="col-md-2 col-xs-2">
 		<button class="btn btn-danger form-control" ng-click="resetOptions()">Reset Options</button>
 	</div>
+	<div class="col-md-6 col-xs-6 pull-right">
+		<input type="text" placeholder="Search..." class="form-control" ngModel="bestiaryFilter">
+	</div>
 </div>
+<br>
 <div class="row">
 	<div class="col-md-12">
 		<div class="row">
@@ -66,9 +63,11 @@
 						<th class="text-center">HP</th>
 						<th class="text-center">Rating</th>
 						<th class="text-center">EXP</th>
+						<th class="text-center">Add</th>
 					</tr>
 				</thead>
 				<tbody>
+					<tr><th><a ui-sref="home.adventure_view.dm.monster_info">Monster Info</a></th></tr>
 					<tr ng-repeat="monster in monsters | filter: bestiaryFilter | limitTo: 25 track by $index">
 						<td class="text-center"><a href="">{{monster.name}}</a></td>
 						<td class="text-center">{{monster.type}}</td>
@@ -77,6 +76,9 @@
 						<td class="text-center">{{monster.HP}}</td>
 						<td class="text-center">{{monster.rating}}</td>
 						<td class="text-center">{{monster.EXP}}</td>
+						<td class="text-center">
+							<button class="btn btn-default" ng-click="addToCombat()">Add to combat</button>
+						</td>
 					</tr>
 				</tbody>
 			</table>

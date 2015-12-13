@@ -9,21 +9,14 @@ angular.module('dmtool')
 				$scope.tabs = [
 			    {
 			    	heading:'DM',
-			    	active: true
+			    	active: true,
+			    	route: "home.adventure_view.dm.adventure"
 			    },
 			    {
-			    	heading:'P1'
+			    	heading:'P1',
+			    	route: "home.adventure_view.player.character_stats"
 			    }
 			  ];
-
-				$scope.selectTab = function(tab) {
-					if(tab.heading === "DM") {
-						$state.go("home.adventure_view.dm.adventure");
-					}
-					else {
-						$state.go("home.adventure_view.player.character_stats");
-					}
-				}
 			}
 		]
 	);

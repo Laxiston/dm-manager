@@ -45,37 +45,45 @@
 				<h6>Passive Wis/Perception: XX</h6>
 			</div>
 		</div>
+		<div class="row">
+			<div class="col-md-12 col-xs-12">
+				<div ng-controller="CharStatsAccordionCtrl">
+				  <uib-accordion close-others="false">
+				    <uib-accordion-group heading="{{group.title}}" ng-repeat="group in groups">
+				    	{{group.content}}
+				    </uib-accordion-group>
+				  </uib-accordion>
+				</div>
+			</div>
+		</div>
 		<h4 class="text-center">Passive Traits</h4>
 		<textarea rows="8" class="form-control"></textarea>
 	</div>
-	<div class="col-md-6 col-xs-6">
-		<div class="row text-center">
+	<div class="col-md-6 col-xs-6 text-center">
+		<div class="row">
 			<div class="col-md-4 col-xs-4">AC: XX</div>
 			<div class="col-md-4 col-xs-4">Initiative: XX</div>
 			<div class="col-md-4 col-xs-4">Speed: XX</div>
 		</div>
-		<div class="row text-center">
-			<div class="col-md-6 col-xs-6">
-				<h6>Max HP: XXX</h6>
-			</div>
-			<div class="col-md-6 col-xs-6">
-				<h6>Hit Dice: XXX</h6>
-			</div>
+		<div class="row">
+			<div class="col-md-4 col-xs-4">Max HP: XXX</div>
+			<div class="col-md-4 col-xs-4">Hit Dice: XXX</div>
+			<div class="col-md-4 col-xs-4">Death Saves: XXXX</div>
 		</div>
-		<div class="row text-center">
+		<div class="row">
 			<h4>Current HP: XXX</h4>
 		</div>
-		<div class="row text-center">
+		<div class="row">
 			<h6>Temporary HP: XXX</h6>
 		</div>
-		<div class="row text-center">
+		<div class="row">
 			<table class="table">
 				<thead>
 					<tr>
-						<th>Name</th>
-						<th>Atk Bonus</th>
-						<th>Dmg/Type</th>
-						<th>Extras</th>
+						<th class="text-center">Name</th>
+						<th class="text-center">Atk Bonus</th>
+						<th class="text-center">Dmg/Type</th>
+						<th class="text-center">Extras</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -85,53 +93,10 @@
 						<td>Example</td>
 						<td>Example</td>
 					</tr>
-					<tr>
-						<td>Example</td>
-						<td>Example</td>
-						<td>Example</td>
-						<td>Example</td>
-					</tr>
-					<tr>
-						<td>Example</td>
-						<td>Example</td>
-						<td>Example</td>
-						<td>Example</td>
-					</tr>
-					<tr>
-						<td>Example</td>
-						<td>Example</td>
-						<td>Example</td>
-						<td>Example</td>
-					</tr>
-					<tr>
-						<td>Example</td>
-						<td>Example</td>
-						<td>Example</td>
-						<td>Example</td>
-					</tr>
-					<tr>
-						<td>Example</td>
-						<td>Example</td>
-						<td>Example</td>
-						<td>Example</td>
-					</tr>
-					<tr>
-						<td>Example</td>
-						<td>Example</td>
-						<td>Example</td>
-						<td>Example</td>
-					</tr>
-					<tr>
-						<td>Example</td>
-						<td>Example</td>
-						<td>Example</td>
-						<td>Example</td>
-					</tr>
-
 				</tbody>
 			</table>
 		</div>
-		<h4 class="text-center">Miscellaneous Gear</h4>
+		<h4>Miscellaneous Gear</h4>
 		<textarea rows="8" class="form-control"></textarea>
 	</div>
 </div>
