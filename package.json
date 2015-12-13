@@ -1,6 +1,6 @@
 {
   "name": "dmtool",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "For those who play DND 5e and don't mind not having the tabletop experience.",
   "main": "server.js",
   "authors": [
