@@ -2,7 +2,7 @@ var mongoose = require('mongoose');
 var fs = require('fs');
 var path = require('path');
 
-mongoose.connect('mongodb://localhost/dmtools');
+mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://localhost/dmtools');
 
 var models_path = path.join(__dirname, './../models');
 

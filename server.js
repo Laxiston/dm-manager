@@ -1,15 +1,8 @@
 var express = require('express');
-
-// Create a new Express application.
 var app = express();
-
-//Set the static folder, will route directly to an index.html inside the folder
 var path = require('path');
-app.use(express.static(path.join(__dirname, './client')));
 
-// Configure view engine to render EJS templates.
-// app.set('views', __dirname + '/views');
-// app.set('view engine', 'ejs');
+app.use(express.static(path.join(__dirname, './client')));
 
 // Use application-level middleware for common functionality, including
 // logging, parsing, and session handling.
@@ -33,6 +26,6 @@ require('./server/config/mongoose.js');
 // Route handler.
 require('./server/config/routes.js')(app);
 
-app.listen(3333, function(){
-  console.log('listening on *:3333');
+app.listen(process.env.PORT || 3333, function(){
+  console.log('listening on port %d, in %s mode', this.address().port, app.settings.env);
 });
