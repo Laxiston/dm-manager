@@ -1,5 +1,5 @@
 {
-  "name": "dmtool",
+  "name": "dm-manager",
   "version": "0.0.1",
   "description": "For those who play DND 5e and don't mind not having the tabletop experience.",
   "main": "server.js",
@@ -12,7 +12,7 @@
     "mongoose",
     "angular-jwt"
   ],
-  "homepage": "https://github.com/ryantang333/dmtool-mean",
+  "homepage": "http://ryantang.net",
   "ignore": [
     "**/.*",
     "node_modules",

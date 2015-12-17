@@ -1,2 +1,2 @@
-# DM Tool
-Accompaniment Tool for DND written with the MEAN stack
+# DM Manager
+Accompaniment tool for DND written with the MEAN stack

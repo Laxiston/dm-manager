@@ -267,10 +267,10 @@ angular.module('dmtool', [
 	[
 						 "$rootScope", "$state", "store", "jwtHelper", 
 		function ($rootScope,   $state,		store, 	 jwtHelper) {
-
 		  $rootScope.$on('$stateChangeStart', function(e, to) {
+		  	var token = store.get("jwt")
 		    if (to.data && to.data.requiresLogin) {
-		      if (!store.get('jwt') || jwtHelper.isTokenExpired(store.get('jwt'))) {
+		      if (!token || jwtHelper.isTokenExpired(token)) {
 		        e.preventDefault();
 		        $state.go('root');
 		      }
@@ -280,7 +280,7 @@ angular.module('dmtool', [
 		      }
 		    }
 		    if (to.data && !to.data.requiresLogin) {
-		    	if (store.get('jwt') && !jwtHelper.isTokenExpired(store.get('jwt'))) {
+		    	if (token && !jwtHelper.isTokenExpired(token)) {
 		        e.preventDefault();
 		        $state.go('home');
 		      }

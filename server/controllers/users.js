@@ -26,7 +26,7 @@ module.exports = {
     User.findOne({username: req.body.username}, function (err, result) {
       if (result) {
         if (req.body.password === result.password) {
-          var user = _.pick(result, '_id', 'username', 'email');
+          var user = _.pick(result, '_id', 'username');
           res.status(201).send({ id_token: createToken(user) });
         }
         else res.status(401).send("Username or password don't match.")
@@ -47,7 +47,7 @@ module.exports = {
         var user = _.pick(req.body, 'username', 'email', 'password');
 
         new User(user).save(function (err, result) {
-          res.status(201).send({ id_token: createToken(result) });
+          res.status(201).send({ id_token: createToken(_.pick(result, "_id", "username")) });
         });
       }
       else res.status(401).send("User with that username or email already exists.");
