@@ -1,12 +1,12 @@
 (function () {
-	'use strict';
+  'use strict';
 
-	angular.module('app', [
-		"angular-jwt",
-	  "angular-storage",
-		"ui.bootstrap",
-		"ui.router",
-		"ui.router.tabs",
-		"ui.router.stateHelper"
-	]);
+  angular.module('app', [
+    'angular-jwt',
+    'angular-storage',
+    'ui.bootstrap',
+    'ui.router',
+    'ui.router.tabs',
+    'ui.router.stateHelper',
+  ]);
 })();
