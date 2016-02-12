@@ -25,7 +25,7 @@ module.exports = {
       User.findOne({ username: req.body.username }, function(err, result) {
         if (result) {
           bcrypt.compare(req.body.password, result.password, function(err, verified) {
-            if (err) {res.status(400).send("Username or password don't match.")}
+            if (err) {res.status(400).send("Username or password don't match.");}
             else if (verified) {
               var user = _.pick(result, '_id', "username");
               res.status(200).send({ id_token: createToken(user) });

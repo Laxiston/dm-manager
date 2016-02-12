@@ -3,13 +3,13 @@
 		<h1 class='text-center'>Login</h1>
 		<form>
 			<div class="form-group">
-				<input type='text' class='form-control' ng-model='user.username' placeholder='Username' required>
+				<input type='text' class='form-control' ng-model='vm.user.username' placeholder='Username' required>
 			</div>
 			<div class="form-group">
-				<input type="password" class="form-control" ng-model="user.password" placeholder="Password" required>
+				<input type="password" class="form-control" ng-model="vm.user.password" placeholder="Password" required>
 			</div>
 			<div class="form-group">
-				<button class='btn btn-primary pull-right' ng-click="login()">Let's play!</button>
+				<button class='btn btn-primary pull-right' ng-click="vm.login()">Let's play!</button>
 			</div>
 			<div class="row">
 				<div class="col-md-6">

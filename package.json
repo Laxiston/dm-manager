@@ -41,6 +41,9 @@
   },
   "devDependencies": {
     "eslint-config-airbnb": "^2.1.1",
-    "eslint-plugin-react": "^3.13.1"
+    "eslint-plugin-react": "^3.13.1",
+    "grunt": "^0.4.5",
+    "grunt-contrib-concat": "^0.5.1",
+    "grunt-contrib-less": "^1.2.0"
   }
 }
