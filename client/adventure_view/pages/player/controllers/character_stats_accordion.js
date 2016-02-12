@@ -1,6 +1,6 @@
 'use-strict';
 
-angular.module('dmtool').controller('CharStatsAccordionCtrl', ["$scope", function ($scope) {
+angular.module('app').controller('CharStatsAccordionCtrl', ["$scope", function ($scope) {
   $scope.groups = [
     {
     	title: 'Strength',

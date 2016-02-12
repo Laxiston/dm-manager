@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('dmtool')
+angular.module('app')
 	.controller('AdventureViewCtrl', 
 		[
 							 "$state", "$scope",

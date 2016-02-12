@@ -7,18 +7,6 @@ Pallette{
 	Action Elements(dark): 1B8440 
 }
 */
-.float_right{
-	float: right;
-}
-.float_left{
-	float:left;
-}
-.display_block{
-	display: block;
-}
 .orange{
 	color: #f29649;
-}
-.border{
-	border-right:1px solid black;
 }

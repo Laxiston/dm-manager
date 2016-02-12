@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app='dmtool'>
+<html ng-app='app'>
 <head>
   <title>Not DND. Honest.</title>
   <link href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css' rel='stylesheet'>
@@ -24,15 +24,22 @@
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular-animate.js"></script>
 
   <!-- Internal Scripts -->
-  <script src="app.js"></script>
-  <script src="login_and_reg/controllers/login.js"></script>
-  <script src="login_and_reg/controllers/register.js"></script>
-  <script src="navbar/controllers/navbar.js"></script>
+  <script src="./app.module.js"></script>
+  <script src="./app.routes.js"></script>
+  <script src="./app.run.js"></script>
+  <script src="./factories/authenticator.factory.js"></script>
+  <script src="./factories/session.factory.js"></script>
+  <script src="./login/login.controller.js"></script>
+  <script src="./register/register.controller.js"></script>
+  <script src="./new_adventure/controllers/roll_new_accordion.js"></script>
+
+
+
+  <script src="navbar/navbar.js"></script>
   <script src="adventure_select/controllers/new_adventure_modal.js"></script>
   <script src="adventure_select/controllers/invite_player_modal.js"></script>
   <script src="adventure_select/controllers/remove_adventure_modal.js"></script>
   <script src="adventure_select/controllers/dm_remove_adventure_modal.js"></script>
-  <script src="new_adventure/controllers/roll_new_accordion.js"></script>
   <script src="adventure_view/controllers/adventure_view.js"></script>
   <script src="adventure_view/controllers/dm_adventure.js"></script>
   <script src="adventure_view/controllers/player_adventure.js"></script>

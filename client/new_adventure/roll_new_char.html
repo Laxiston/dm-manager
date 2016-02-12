@@ -3,9 +3,9 @@
 		<div class="col-md-8 col-md-offset-2">
 			<h1 class="text-center">Create your character!</h1>
 			<p>The next couple of pages will take you through a step-by-step process of rolling a new character in DnD. How you create your character is entirely up to you! You can select everything on your own, leave it all up to fate, or you can mix it up and have a mutt of a character. Normally there's a bunch of information to find and read when creating a character, but we've condensed it down and simplified the process for you! Here is an outline of the sections you will be going through:</p>
-			<div ng-controller="RollNewAccordionCtrl">
+			<div>
 			  <uib-accordion close-others="false">
-			    <uib-accordion-group heading="{{group.title}}" ng-repeat="group in groups">
+			    <uib-accordion-group heading="{{group.title}}" ng-repeat="group in vm.groups">
 			      {{group.content}}
 			    </uib-accordion-group>
 			  </uib-accordion>
@@ -14,7 +14,7 @@
 			<div class="row">
 				<div class="col-md-6 col-md-offset-3">
 					<a href="confirm_char.html" class="btn btn-primary">RNJesus take the wheel</a>
-					<a href="class_select.html" class="btn btn-success float_right">Let's get started!</a>
+					<a href="class_select.html" class="btn btn-success pull-right">Let's get started!</a>
 				</div>
 			</div>
 		</div>

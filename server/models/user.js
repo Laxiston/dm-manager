@@ -19,10 +19,6 @@ UserSchema.path('username')
 	  return v.length <= 45;
 	}, 'Name must be shorter than 45 chars');
 UserSchema.path('password').required(true, 'Name cannot be empty');
-UserSchema.path('password')
-  .validate(function (v) {
-    return v.length <= 45;
-  }, 'Name must be shorter than 45 chars');
 UserSchema.path('email').required(true, 'Name cannot be empty');
 UserSchema.path('email')
   .validate(function (v) {

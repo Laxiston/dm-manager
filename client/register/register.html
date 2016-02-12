@@ -1,0 +1,21 @@
+<div class="col-md-4 col-md-offset-4">
+	<h1 class='text-center'>Register</h1>
+	<form>
+		<div class="form-group">
+			<input type='text' class='form-control' ng-model='vm.new_user.username' placeholder='Username' required>
+		</div>
+		<div class="form-group">
+			<input type="email" class="form-control" ng-model="vm.new_user.email" placeholder="E-mail" required>
+		</div>
+		<div class="form-group">
+			<input type="password" class="form-control" ng-model="vm.new_user.password" placeholder="Password" required>
+		</div>
+		<div class="form-group">
+			<input type="password" class="form-control" ng-model="vm.new_user.confirm_password" placeholder="Confirm Password" required>
+		</div>
+		<a href="#/">
+			<button type="button"class="btn btn-danger ">Cancel</button>
+		</a>
+		<button class="btn btn-primary pull-right" ng-click="vm.register()">Register</button>
+	</form>
+</div>

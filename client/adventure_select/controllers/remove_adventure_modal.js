@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('dmtool').controller('RemoveAdventureModalCtrl', ["$scope", "$uibModal", function ($scope, $uibModal) {
+angular.module('app').controller('RemoveAdventureModalCtrl', ["$scope", "$uibModal", function ($scope, $uibModal) {
   $scope.open = function () {
     var modalInstance = $uibModal.open({
       animation: true,
@@ -10,7 +10,7 @@ angular.module('dmtool').controller('RemoveAdventureModalCtrl', ["$scope", "$uib
   };
 }]);
 
-angular.module('dmtool').controller('RemoveAdventureModalInstanceCtrl', ["$scope", "$uibModalInstance", function ($scope, $uibModalInstance) {
+angular.module('app').controller('RemoveAdventureModalInstanceCtrl', ["$scope", "$uibModalInstance", function ($scope, $uibModalInstance) {
   $scope.ok = function () {
     $uibModalInstance.close();
   };
