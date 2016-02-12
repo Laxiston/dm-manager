@@ -24,12 +24,12 @@
 				},
 				views: {
 					"header" : {
-						templateUrl: 'navbar/navbar.html',
+						templateUrl: './navbar/navbar.html',
 						controller: 'NavbarController',
 						controllerAs: 'vm'
 					},
 					"content" : {
-						templateUrl: 'login/login.html',
+						templateUrl: './login/login.html',
 						controller: 'LoginController',
 						controllerAs: 'vm'
 					}

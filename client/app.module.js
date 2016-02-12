@@ -2,7 +2,6 @@
 	'use strict';
 
 	angular.module('app', [
-		"ngAnimate",
 		"angular-jwt",
 	  "angular-storage",
 		"ui.bootstrap",
