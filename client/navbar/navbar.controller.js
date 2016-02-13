@@ -3,15 +3,15 @@
 
 	angular
 		.module('app')
-		.controller('NavbarController', NavbarController);
+		.controller('NavbarController', controller);
 
-	NavbarController.$inject = [
+	controller.$inject = [
 		"$state",
 		"$rootScope",
 		"store"
 	];
 
-	function NavbarController($state, $rootScope, store) {
+	function controller($state, $rootScope, store) {
 		/* jshint validthis: true */
 		var vm = this;
 		vm.logout = logout;

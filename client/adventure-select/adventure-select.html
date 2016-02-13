@@ -13,6 +13,30 @@
 		</div>
 	</div>
 	<!-- Eventually use ng-repeat -->
+	<div ng-repeat="adventures in vm.adventures" class="row">
+		<div class="col-md-8 col-md-offset-2">
+			<div class="well well-sm">
+				<div class="row">
+					<div class="col-md-10 col-md-offset-1 col-xs-10 col-xs-offset-1">
+						<h2>My Adventure</h2>
+					</div>
+					<div class="col-md-1 col-xs-1">
+						<div ng-controller="DMRemoveAdventureModalController as vm">
+							<a href="" class="btn btn-danger pull-right" ng-click="vm.open()"><span class="glyphicon glyphicon-remove"></span></a>
+						</div>
+					</div>
+				</div>
+				<p>Playing with Yeti, Jake, Brushgatherer, Jeffrey, Morgana, and Agore with <span class="orange">you</span> as DM</p>
+				<h6>The adventure began on 1/2/15 and has lasted 5 days, 6 hours, 3 minutes</h6>
+				<div ng-controller="InvitePlayerModalController as vm">
+					<a href="" class="btn btn-primary pull-left" ng-click="vm.open()">Invite Players</a>
+				</div>
+				<a ui-sref="home.adventure-view" class="btn btn-success pull-right">Continue Adventure</a>
+				<!-- Hack to make well encompass the buttons -->
+				<div class="row"></div>
+			</div>
+		</div>
+	</div>
 	<div id="temp_my_adventure" class="row">
 		<div class="col-md-8 col-md-offset-2">
 			<div class="well well-sm">

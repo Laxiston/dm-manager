@@ -3,15 +3,15 @@
 
 	angular
 		.module('app')
-		.factory("authenticator", authenticatorService);
+		.factory("authenticator", factory);
 
-	authenticatorService.$inject = [
+	factory.$inject = [
 		"$state",
 		"store",
 		"jwtHelper"
 	];
 
-	function authenticatorService($state, store, jwtHelper) {
+	function factory($state, store, jwtHelper) {
 		var service = {
 			authenticate: authenticate
 		};

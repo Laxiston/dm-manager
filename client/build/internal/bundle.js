@@ -311,6 +311,46 @@
 
   angular
     .module('app')
+    .controller('AdventureSelectController', controller);
+
+  controller.$inject = [
+    "adventureFactory",
+    "sessionFactory"
+  ];
+
+  function controller(adventureFactory, sessionFactory) {
+    /* jshint validthis: true */
+    var vm = this;
+
+    vm.adventures = [];
+    vm.me = sessionFactory.getMe();
+    vm.createAdventure = createAdventure;
+
+    //////////
+
+    // function getAdventures() {
+    //   adventureFactory.adventures()
+    //     .then(function(data) {
+    //       return data;
+    //     });
+    // }
+
+    function createAdventure() {
+      var data = vm.new_adventure;
+      data.user_id = vm.me._id;
+      adventureFactory.create(data)
+        .then(function(data) {
+          vm.adventures.push(data);
+          vm.new_adventure = null;
+        });
+    }
+  }
+})();
+(function () {
+  'use strict';
+
+  angular
+    .module('app')
     .controller('DMRemoveAdventureModalInstanceController', controller);
 
   controller.$inject = [
@@ -970,15 +1010,50 @@
 
 	angular
 		.module('app')
-		.factory("authenticator", authenticatorService);
+		.factory('adventureFactory', factory);
 
-	authenticatorService.$inject = [
+	factory.$inject = [
+		"$http"
+	];
+
+	function factory($http) {
+	  var factory = {
+	  	create: create,
+	  	adventures: adventures
+	  };
+
+	  return factory;
+	  //////////
+
+    function create(adventure) {
+      return $http.post('/adventures', adventure)
+        .then(createSucceeded)
+        .catch(createFailed);
+
+      function createSucceeded(response) {
+        return response.data;
+      }
+
+      function createFailed(error) {
+        alert('XHR Failed for create: ' + error.data);
+      }
+    }
+	}
+})();
+(function () {
+	'use strict';
+
+	angular
+		.module('app')
+		.factory("authenticator", factory);
+
+	factory.$inject = [
 		"$state",
 		"store",
 		"jwtHelper"
 	];
 
-	function authenticatorService($state, store, jwtHelper) {
+	function factory($state, store, jwtHelper) {
 		var service = {
 			authenticate: authenticate
 		};
@@ -1016,15 +1091,15 @@
 
 	angular
 		.module('app')
-		.factory('sessionFactory', sessionFactory);
+		.factory('sessionFactory', factory);
 
-	sessionFactory.$inject = [
+	factory.$inject = [
 		"$http",
 		"store",
 		"jwtHelper"
 	];
 
-	function sessionFactory($http, store, jwtHelper) {
+	function factory($http, store, jwtHelper) {
 	  var factory = {
 	  	login			: login,
 	  	register	: register,
@@ -1074,15 +1149,15 @@
 
 	angular
 		.module('app')
-		.controller('LoginController', LoginController);
+		.controller('LoginController', controller);
 
-	LoginController.$inject = [
+	controller.$inject = [
 		"$state",
 		"store",
 		"sessionFactory"
 	];
 
-	function LoginController($state, store, sessionFactory) {
+	function controller($state, store, sessionFactory) {
 		/* jshint validthis: true */
 		var vm = this;
 
@@ -1102,15 +1177,15 @@
 
 	angular
 		.module('app')
-		.controller('NavbarController', NavbarController);
+		.controller('NavbarController', controller);
 
-	NavbarController.$inject = [
+	controller.$inject = [
 		"$state",
 		"$rootScope",
 		"store"
 	];
 
-	function NavbarController($state, $rootScope, store) {
+	function controller($state, $rootScope, store) {
 		/* jshint validthis: true */
 		var vm = this;
 		vm.logout = logout;
@@ -1134,11 +1209,11 @@
 
   angular
     .module('app')
-    .controller('RollNewAccordionController', RollNewAccordionController);
+    .controller('RollNewAccordionController', controller);
 
-  RollNewAccordionController.$inject = [];
+  controller.$inject = [];
 
-  function RollNewAccordionController() {
+  function controller() {
     /* jshint validthis: true */
     var vm = this;
 
@@ -1176,15 +1251,15 @@
 
 	angular
 		.module('app')
-		.controller('RegisterController', RegisterController);
+		.controller('RegisterController', controller);
 
-	RegisterController.$inject = [
+	controller.$inject = [
 		"$state",
 		"store",
 		"sessionFactory"
 	];
 
-	function RegisterController($state, store, sessionFactory) {
+	function controller($state, store, sessionFactory) {
 		/* jshint validthis: true */
 		var vm = this;
 

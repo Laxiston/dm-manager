@@ -3,11 +3,11 @@
 
   angular
     .module('app')
-    .controller('RollNewAccordionController', RollNewAccordionController);
+    .controller('RollNewAccordionController', controller);
 
-  RollNewAccordionController.$inject = [];
+  controller.$inject = [];
 
-  function RollNewAccordionController() {
+  function controller() {
     /* jshint validthis: true */
     var vm = this;
 

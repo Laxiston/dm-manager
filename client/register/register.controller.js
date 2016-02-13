@@ -3,15 +3,15 @@
 
 	angular
 		.module('app')
-		.controller('RegisterController', RegisterController);
+		.controller('RegisterController', controller);
 
-	RegisterController.$inject = [
+	controller.$inject = [
 		"$state",
 		"store",
 		"sessionFactory"
 	];
 
-	function RegisterController($state, store, sessionFactory) {
+	function controller($state, store, sessionFactory) {
 		/* jshint validthis: true */
 		var vm = this;
 

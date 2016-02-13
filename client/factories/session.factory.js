@@ -3,15 +3,15 @@
 
 	angular
 		.module('app')
-		.factory('sessionFactory', sessionFactory);
+		.factory('sessionFactory', factory);
 
-	sessionFactory.$inject = [
+	factory.$inject = [
 		"$http",
 		"store",
 		"jwtHelper"
 	];
 
-	function sessionFactory($http, store, jwtHelper) {
+	function factory($http, store, jwtHelper) {
 	  var factory = {
 	  	login			: login,
 	  	register	: register,

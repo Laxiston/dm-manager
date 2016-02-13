@@ -3,15 +3,15 @@
 
 	angular
 		.module('app')
-		.controller('LoginController', LoginController);
+		.controller('LoginController', controller);
 
-	LoginController.$inject = [
+	controller.$inject = [
 		"$state",
 		"store",
 		"sessionFactory"
 	];
 
-	function LoginController($state, store, sessionFactory) {
+	function controller($state, store, sessionFactory) {
 		/* jshint validthis: true */
 		var vm = this;
 
