@@ -28,8 +28,7 @@
           },
           'content' : {
             templateUrl: './login/login.html',
-            controller: 'LoginController',
-            controllerAs: 'vm'
+            controller: 'LoginController as vm'
           }
         },
         children: [
@@ -39,8 +38,7 @@
             views: {
               'content@' : {
                 templateUrl: 'register/register.html',
-                controller: 'RegisterController',
-                controllerAs: 'vm'
+                controller: 'RegisterController as vm'
               }
             }
           },
@@ -64,11 +62,11 @@
         views: {
           'header@' : {
             templateUrl: 'navbar/navbar-internal.html',
-            controller: 'NavbarController',
-            controllerAs: 'vm'
+            controller: 'NavbarController as vm'
           },
           'content@' : {
-            templateUrl: 'adventure-select/adventure-select.html'
+            templateUrl: 'adventure-select/adventure-select.html',
+            controller: 'AdventureSelectController as vm'
           }
         },
         children: [
@@ -96,8 +94,7 @@
             views: {
               'content@' : {
                 templateUrl: 'new-adventure/roll-new-char.html',
-                controller: 'RollNewAccordionController',
-                controllerAs: 'vm'
+                controller: 'RollNewAccordionController as vm'
               } 
             }
           },
@@ -107,8 +104,7 @@
             views: {
               'content@' : {
                 templateUrl: 'adventure-view/adventure-view.html',
-                controller: 'AdventureViewController',
-                controllerAs: 'vm'
+                controller: 'AdventureViewController as vm'
               }
             },
             params: {

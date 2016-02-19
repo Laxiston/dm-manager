@@ -3,7 +3,7 @@
 
   angular
     .module('app')
-    .controller('NewAdventureModalInstanceController', controller);
+    .controller('InvitePlayerModalController', controller);
 
   controller.$inject = [
     "$uibModalInstance"

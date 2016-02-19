@@ -2,7 +2,7 @@ var mongoose = require("mongoose");
 var Schema = mongoose.Schema;
 var AdventureSchema = new mongoose.Schema({
   title: String,
-  dm: {type: Schema.Types.ObjectId, ref: "User"},
+  dm_id: {type: Schema.Types.ObjectId, ref: "User"},
   players: [{type: Schema.Types.ObjectId, ref: "Character"}],
   created_at: {type: Date, default: Date.now},
   updated_at: {type: Date, default: Date.now}

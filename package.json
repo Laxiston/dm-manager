@@ -24,7 +24,7 @@
   ],
   "scripts": {
     "q": "nodemon server.js",
-    "start": "pm2 start mongod && pm2 start server.js",
+    "start": "pm2 start mongod && pm2 start pm2.json",
     "postinstall": "bower cache clean && bower install"
   },
   "dependencies": {
@@ -41,7 +41,8 @@
     "mongoose-deep-populate": "^2.0.3",
     "morgan": "^1.6.1",
     "passport": "^0.2.2",
-    "passport-local": "^1.0.0"
+    "passport-local": "^1.0.0",
+    "q": "^1.4.1"
   },
   "devDependencies": {
     "eslint": "^1.10.3",

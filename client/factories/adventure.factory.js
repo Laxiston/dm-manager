@@ -6,30 +6,63 @@
 		.factory('adventureFactory', factory);
 
 	factory.$inject = [
-		"$http"
+		"$http",
+    "$log"
 	];
 
-	function factory($http) {
+	function factory($http, $log) {
 	  var factory = {
 	  	create: create,
-	  	adventures: adventures
+	  	get: get,
+      destroy: destroy,
+      leave: leave
 	  };
-
 	  return factory;
 	  //////////
+
+	  function get() {
+      return $http.get('/adventures')
+        .then(getSucceeded)
+        .catch(fail);
+
+      function getSucceeded(response) {
+        return response.data;
+      }
+    }
 
     function create(adventure) {
       return $http.post('/adventures', adventure)
         .then(createSucceeded)
-        .catch(createFailed);
+        .catch(fail);
 
       function createSucceeded(response) {
         return response.data;
       }
+    }
 
-      function createFailed(error) {
-        alert('XHR Failed for create: ' + error.data);
+    function destroy(id) {
+    	return $http.delete('/adventures/' + id)
+        .then(destroySucceeded)
+        .catch(fail);
+
+      function destroySucceeded(response) {
+        return response.data;
       }
     }
+
+    function leave(adv_id, user_id) {
+    	return $http.post('/adventures/' + adv_id + '/leave', {user_id: user_id})
+        .then(leaveSucceeded)
+        .catch(fail);
+
+      function leaveSucceeded(response) {
+        return response.data;
+      }
+    }
+
+    function fail(error) {
+      alert('Adventure Factory XHR failed: ' + error.data);
+    }
+
 	}
 })();
